@@ -77,16 +77,31 @@ html, body {
     padding-top: 20.15px;
   }
 
-  .one img {
-    display: block;
-    width: 150;
-    height: 150;
+  .wrapper {
+    display: flex;
+  }
+
+  .container {
+    display: flex;
+  }
+
+  .one {
+    display: flex;
   }
   
-  /* || main layout */
-  
-  main {
-    display: flex;
+  .one img {
+    display: block;
+    height: 60 px;
+    padding-top: 20.15 px;
+  }
+
+  .caption {
+    background: white;
+    padding: 1%;
+  }
+  .two {
+    background: white;
+    padding: 1%;
   }
 
 
