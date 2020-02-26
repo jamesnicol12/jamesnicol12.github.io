@@ -92,7 +92,7 @@ html, body {
   }
   
   .one img {
-    display: block;
+    display: flex;
     height: 60 px;
     width: 60 px;
   }
