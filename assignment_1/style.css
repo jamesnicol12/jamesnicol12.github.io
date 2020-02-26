@@ -84,9 +84,10 @@ html, body {
   }
 
   .container {
+    max-width: 960px;
     display: flex;
     flex-flow: wrap;
-  }
+  }           
 
   
   .one img {
