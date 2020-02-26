@@ -93,7 +93,7 @@ html, body {
   .one img {
     display: block;
     height: 60 px;
-    padding-top: 20.15 px;
+    width: 60 px;
   }
 
   .caption {
