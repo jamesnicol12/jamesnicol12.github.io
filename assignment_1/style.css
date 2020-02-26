@@ -80,15 +80,17 @@ html, body {
   }
 
   .wrapper {
-    display: flex;
+    justify-content: center;
   }
 
   .container {
     display: flex;
+    flex-flow: wrap;
   }
 
   
   .one img {
+    margin-left: 10px;
     display: block;
     height: 60 px;
     width: 60 px;
