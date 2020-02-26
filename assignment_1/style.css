@@ -92,9 +92,10 @@ html, body {
   }
   
   .one img {
-    display: flex;
+    display: block;
     height: 60 px;
     width: 60 px;
+    padding: 1%;
   }
 
   .caption {
