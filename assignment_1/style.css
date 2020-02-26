@@ -76,23 +76,19 @@ html, body {
     height: 60px;
     padding-top: 20.15px;
   }
-  
+
+  .one img {
+    display: block;
+    width: 150;
+    height: 150;
+  }
   
   /* || main layout */
   
   main {
     display: flex;
   }
-  
-  .header img {
-    width: 100; 
-    height: 150;
-  }
 
-  .one img {
-    width: 150;
-    height: 150;
-  }
-  
+
 
   
