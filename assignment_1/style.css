@@ -20,19 +20,19 @@ html, body {
   
   h1, h2 {
     font-family: 'Luckiest Guy', cursive;
-    color: #2a2a2a;
+    color: #AEFF0A;
   }
   
   p, input, li {
     font-family: lorem ipsum;
-    color: #2a2a2a;
+    color: #AEFF0A;
   }
   
   h1 {
     font-size: 4rem;
     font-weight: bold;
     text-align: left;
-    text-shadow: 2px 2px 10px black;
+    text-shadow: 2px 2px 10px #AEFF0A;
   }
   
   h2 {
@@ -98,12 +98,12 @@ html, body {
   }
 
   .caption {
-    background: white;
+    background: #C20AFF;
     background-size: auto;
     padding: 1%;
   }
   .two {
-    background: white;
+    background: #C20AFF;
     padding: 1%;
   }
 
