@@ -47,7 +47,7 @@ html, body {
     line-height: 1.5;
   }
 
-  .jobtitle li {
+  .jobtitle {
     font-size: 2.8rem;
     font-weight: normal;
   }
@@ -62,12 +62,7 @@ html, body {
   }
   
   body > * {
-    background-color: red;
-    padding: 1%;
-  }
-  
-  main, header, article, aside, footer, section {
-    background-color: rgba(21, 44, 255, 0.5);
+    background-color: #BE47FF;
     padding: 1%;
   }
   
