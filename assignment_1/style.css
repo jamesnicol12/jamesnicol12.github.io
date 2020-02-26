@@ -7,7 +7,7 @@ html, body {
   
   html {
     font-size: 10px;
-    background-color: #a9a9a9;
+    background-color: #77B300;
   }
   
   body {
@@ -57,13 +57,14 @@ html, body {
   
   .header {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     display: flex;
     flex-flow: row wrap;
+    background-color: #8704B3;
   }
   
   body > * {
-    background-color: #BE47FF;
+    background-color: #C924FF;
     padding: 1%;
   }
 
