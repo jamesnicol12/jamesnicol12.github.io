@@ -7,7 +7,7 @@ html, body {
   
   html {
     font-size: 10px;
-    background-color: #AEFF0A;
+    background-color: #F7FF61;
   }
   
   body {
@@ -20,7 +20,7 @@ html, body {
   
   h1, h2 {
     font-family: 'Luckiest Guy', cursive;
-    color: #AEFF0A;
+    color: #F6FF47;
   }
   
   p, input, li {
@@ -33,7 +33,7 @@ html, body {
     font-weight: bold;
     text-align: left;
     margin-left: 10px;
-    text-shadow: 2px 2px 10px #AEFF0A;
+    text-shadow: 2px 2px 10px #F6FF47;
   }
   
   h2 {
@@ -62,7 +62,7 @@ html, body {
     margin-bottom: 15px;
     display: flex;
     flex-flow: row wrap;
-    background-color: #8704B3;
+    background-color: #650EB3;
     padding: 15px;
     justify-content: center;
     top: 50%;
@@ -70,7 +70,7 @@ html, body {
   }
   
   body > * {
-    background-color: #AEFF0A;
+    background-color: #F7FF61;
     padding: 1%;
   }
 
@@ -109,19 +109,19 @@ html, body {
     display: block;
     height: 350px;
     width: 250px;
-    border: 1px #C20AFF; 
+    border: 1px #A947FF; 
     border-radius: 4px;
     margin: 25px;
   }
 
   .caption {
-    background: #C20AFF;
+    background: #A947FF;
     background-size: auto;
     padding: 1%;
   }
   
   .two {
-    background: #C20AFF;
+    background: #A947FF;
     padding: 1%;
     flex: 66.67%;
   }
