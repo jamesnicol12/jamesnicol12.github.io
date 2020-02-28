@@ -69,7 +69,7 @@ html, body {
     bottom: 50%;
   }
   
-  body > * {
+  body {
     background-color: #F7FF61;
     padding: 1%;
   }
@@ -84,6 +84,7 @@ html, body {
     height: 150px;
     width: 150px;
     padding-top: 20.15px;
+    align-items: right;
   }
 
   .wrapper {
