@@ -15,6 +15,10 @@ html, body {
     min-width: 800px;
     margin: 0 auto;
   }
+
+  div {
+    display: block;
+  }
   
   /* || typography */
   
@@ -82,13 +86,14 @@ html, body {
   .header img {
     display: block;
     height: 150px;
-    width: 150px;
     padding-top: 20.15px;
     align-items: right;
   }
 
   .wrapper {
     justify-content: center;
+    display: felx;
+    flex-direction: column;
     top: 50%;
     left: 50%;
   }
@@ -109,7 +114,7 @@ html, body {
   .one img {
     display: block;
     height: 350px;
-    width: 250px;
+    width: inherit;
     border: 1px #A947FF; 
     border-radius: 4px;
     margin: 25px;
@@ -125,6 +130,10 @@ html, body {
     background: #A947FF;
     padding: 1%;
     flex: 66.67%;
+  }
+
+  .resp {
+    margin-bottom: 15px;
   }
 
   @media screen and (max-width: 1000px){
