@@ -25,10 +25,30 @@
       </div>
     </div>
     <script>
-      function clickMe() {
-        const content = document.querySelector(".content");
-        content.innerHTML = "Hello world";
+function clickMe() {
+      var name = ["James", "Nicol"];
+      var first = name[0];
+      var last = name[1];
+      var namecount = first.length + last.length;
+      var thirdfirst = first.charAt(2);
+      var thirdfirstupper = thirdfirst.toUpperCase();
+      var threelast = last.substr(2, 4);
+    
+      const content = document.querySelector(".content");
+        content.innerHTML =
+          "Hello world" + 
+          "<p> My name has " + namecount + " characters. </p>" +
+            "<p> The third character in my name is " + thirdfirstupper +
+              "<br>" + threelast + "</br></p>";
+      
+      const headerContent = document.querySelector(".header");
+      headerContent.innerHTML = "James's Lab 4 " + namecount;
+
+    
+
+      
       }
     </script>
   </body>
 </html>
+
