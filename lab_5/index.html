@@ -2,14 +2,15 @@
 <html lang="en">
 
 <head>
-  <title>Test JSON page</title>
+  <title>James Nicol Lab 5</title>
   <link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
 
 <body>
   <div class="container">
     <div class="wrapper">
-      <div class="header">Test JSON page</div>
+      <div class="header">Test JSON Page</div>
+       <!-- <button class="button" onclick="loadData()">Load Some JSON</button> -->
       <button class="activate">Click me to replace list
         entries</button>
       <div class="content">
@@ -18,6 +19,7 @@
     </div>
   </div>
   <script>
+
     /* N.B. - For your lab, use the variable "countries" now available on the window space */
     const countries = [
       { "name": "Afghanistan", "code": "AF" },
@@ -265,6 +267,51 @@
       { "name": "Zimbabwe", "code": "ZW" }
     ]
     console.log("List of countries in the world", countries);
+
+    const headerContent = document.querySelector(".header");
+      headerContent.innerHTML = "James Nicol's List of Countries";
+
+    const clickme = document.querySelector(".activate");
+
+    function getRandomInt(min, max) {
+      min = 0;
+      max = 242;
+      return Math.floor(Math.random() * (max - min + 1)) + min; 
+    }
+
+    function rcountries() {
+      console.clear();
+      var mycontent = document.querySelector(".content");
+      mycontent.innerHTML = "";
+      list = document.createElement("ol");
+      list.className = "countries";
+      mycontent.appendChild(list);
+
+      var i = 0;
+      var showlist = [];
+      while (i < 25) {
+        country = getRandomInt();
+        if (showlist.includes(country)===true) {
+          continue;
+          i += 0;
+        } else {
+          showlist.push(getRandomInt());
+          i += 1;
+        }
+      }
+      var used = [];
+      showlist.forEach((element) => {
+        list.innerHTML += "<li><b>" + countries[element]["code"] + "</b> " + 
+          countries[element]["name"] + "</li>";
+        used.push(countries[element]["name"]);
+      })
+      countries.forEach((index) => {
+        if (used.includes(index["name"])===false) {
+          console.log(index["code"] + " " + index["name"]);
+        }
+      })
+    }
+    clickme.addEventListener("click", rcountries);
   </script>
 </body>
 
