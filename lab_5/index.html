@@ -291,7 +291,7 @@
       var showlist = [];
       while (i < 25) {
         country = getRandomInt();
-        if (showlist.includes(country)===true) {
+        if (showlist.includes(country)==true) {
           continue;
           i += 0;
         } else {
@@ -306,7 +306,7 @@
         used.push(countries[element]["name"]);
       })
       countries.forEach((index) => {
-        if (used.includes(index["name"])===false) {
+        if (used.includes(index["name"])==false) {
           console.log(index["code"] + " " + index["name"]);
         }
       })
