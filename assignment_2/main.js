@@ -5,15 +5,15 @@ const btn = document.querySelector('button');
 const overlay = document.querySelector('.overlay');
 
 /* Looping through images */
-
-for (let i = 1; i <= 5; i++) {
+const arr = [1,2,3,4,5];
+arr.forEach((i) => {
     const newImage = document.createElement('img');
     newImage.setAttribute('src','images/pic'+i+ '.jpg')
     thumbBar.appendChild(newImage);
-    newImage.onclick = function(src_value){
-        displayedImage.src = src_value.target.src; 
+    newImage.onclick = function(x){
+        displayedImage.src = x.target.src; 
     }
-}
+})
 /* 
 Image Sources:
 pic1 - www.brittanytourism.com
