@@ -26,15 +26,18 @@ pic5 - https://en.wikipedia.org/wiki/File:Fernando_noronha.jpg
                                 
 /* Wiring up the Darken/Lighten button */  
 /*MDN source used for base code*/
-btn.onclick = function() {
-    const btnClass = btn.getAttribute("class");
-    if (btnClass === "dark") {
+  btn.onclick = function () {
+    clickme();
+  }
+  function clickme() {
+    if (btn.className === "dark") {
       btn.setAttribute("class", "light");
-      btn.textContent = "Lighten";
+      btn.innerHTML = "Lighten";
       overlay.style.backgroundColor = "rgba(0,0,0,0.5)";
-    } else {
+    }
+    else {
       btn.setAttribute("class", "dark");
-      btn.textContent = "Darken";
+      btn.innerHTML = "Darken";
       overlay.style.backgroundColor = "rgba(0,0,0,0)";
     }
-  }
+  };
