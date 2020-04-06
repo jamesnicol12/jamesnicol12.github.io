@@ -41,7 +41,34 @@
         const str1 = "<b>HORNBAKE LIBRARY</b>";
         mark1.bindPopup(str1).openPopup();
 
-      
+        fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json')
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => 
+        {console.log(data);
+
+          const sites = 
+          [data[0].geocoded_column_1.coordinates[0],
+          data[0].geocoded_column_1.coordinates[1], 
+          data[1].geocoded_column_1.coordinates[0],
+          data[1].geocoded_column_1.coordinates[1],
+          data[2].geocoded_column_1.coordinates[0],
+          data[2].geocoded_column_1.coordinates[1]];
+          console.log(sites);
+
+          const mark2 = L.marker([sites[1], sites[0]]).addTo(mymap);
+          const str2 = "<b>MARTINI'S RESTAURANT & LOUNGE</b>";
+          mark2.bindPopup(str2).openPopup();
+
+          const mark3 = L.marker([sites[3], sites[2]]).addTo(mymap);
+          const str3 = "<b>MCDONALDS</b>";
+          mark3.bindPopup(str3).openPopup();
+
+          const mark4 = L.marker([sites[5], sites[4]]).addTo(mymap);
+          const str4 = "<b>SUBWAY</b>";
+          mark4.bindPopup(str4).openPopup();
+        });
       
     </script>
   </body>
