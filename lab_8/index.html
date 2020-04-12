@@ -26,7 +26,8 @@
         .then((data) => { // this is an explicit return. If I want my information to go further, I'll need to use the "return" keyword before the brackets close
           console.log(data);
           // return data; // <- this will pass the data to the next "then" statement when I'm ready.
-        
+          
+          //Followed Professor's Lab 8 walk through lecture
           const clearEmptyData = data.filter((f)=>f.geocoded_column_1);
           const refined = clearEmptyData.map((m)=>({
             category: m.category,
