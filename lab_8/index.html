@@ -10,7 +10,8 @@
       <div class="wrapper">
         <div class="header">Frontend Libraries: Charts Lab</div>
         <div class="content">
-          When your lab is done, this should be replaced with a useful chart full of food data.
+          <div id="chartContainer" style="height: 600px; width: 100%;">
+            </div>
         </div>
         <div class="footer">Let's eat out in the future!</div>
       </div>
@@ -25,7 +26,77 @@
         .then((data) => { // this is an explicit return. If I want my information to go further, I'll need to use the "return" keyword before the brackets close
           console.log(data);
           // return data; // <- this will pass the data to the next "then" statement when I'm ready.
+        
+          const clearEmptyData = data.filter((f)=>f.geocoded_column_1);
+          const refined = clearEmptyData.map((m)=>({
+            category: m.category,
+            name: m.name,
+            latLong: m.geocoded_column_1.coordinates
+          }));
+          return refined;
         })
+
+        .then((data)=>{
+          return data.reduce((result, current)=>{
+            if(!result[current.category]){
+              result[current.category]=[];
+            }
+            result[current.category].push(current);
+            return result;
+          }, {});
+        })
+
+        .then((data) =>{
+          console.log(data);
+          const reformatdata = [];
+          Object.keys(data).forEach(function(key){
+            let each = {label:key,y:data[key].length};
+            reformatdata.push(each);
+          });
+          console.log(reformatdata);
+          return reformatdata;
+        })
+
+        .then((results) =>{
+          console.log(results);
+          const chart = new CanvasJS.Chart("chartContainer",{
+            animationEnabled: true,
+            theme: "dark1",
+            title: {
+              text: "Let's Find Somewhere To Eat"
+            },
+            colorSet: "colorSet3",
+            axisX: {
+              title: "Categories",
+              labelFontSize: 10,
+              margin: 10,
+              interval: 1
+            },
+            axisY: {
+              title: "Number of Places To Eat",
+              interval: 10,
+              scaleBreaks:{
+                type: "zigzag",
+                customBreaks: [{
+                  startValue: 20,
+                  endValue: 35,
+                },{
+                  startValue: 60,
+                  endValue: 120
+                },{
+                  startValue: 160,
+                  endValue: 220
+                }
+              ]
+              }
+            },
+            data: [{
+              type: "bar",
+              dataPoints: results,
+            }],
+          });
+          chart.render();
+        });
     </script>
   </body>
 </html>
