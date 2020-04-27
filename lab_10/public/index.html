@@ -8,12 +8,14 @@
     <div class="wrapper">
       <div class="container">
         <div>
-          <h1 class="header">POST and PUT lab - with Fetch</h1>
+          <h1 class="header">James Nicol's Lab 10</h1>
         </div>
         <div>
           <form class="targetForm" id="labForm">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" />
+            <label for="zipcode">Zip Code</label>
+            <input type="text" id="zipcode" name="zipcode" />
             <label for="interests">Interests</label>
             <textarea id="interests" name="interests" rows="5" cols="33">
                 Default text says what?
@@ -21,36 +23,65 @@
             ><br />
             <button id="formBtn">Submit</button>
           </form>
+          <button id="formBtnget">Data</button>
+          <div class = "listcontainer">
+            <div class = "usersCont">
+              <ol class = "users"></ol>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <script>
       function sendForm(e) {
         e.preventDefault(); // this prevents your page reloading on button click
-        const target = document.querySelector("#labForm");
-        const btn = document.querySelector("#formBtn");
+        const target = document.querySelector('#labForm');
+        const btn = document.querySelector('#formBtn');
 
         const formToSend = new FormData(target);
 
-        fetch("/api", {
-          method: "POST",
+        fetch('/api', {
+          method: 'PUT',
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json'
           },
-          body: JSON.stringify(Object.fromEntries(formToSend)),
+          body: JSON.stringify(Object.fromEntries(formToSend))
         })
-          .then((data) => data.text()) // note: we didn't send JSON, so there's no JSON to get.
-          .then((txtresponse) => {
-            console.log(txtresponse);
-            btn.setAttribute("disabled", true);
-            const br = document.createElement("br");
+          .then((data) => data.json()) // note: we didn't send JSON, so there's no JSON to get.
+          .then((jsonresponse) => {
+            console.log(jsonresponse);
+            btn.setAttribute('disabled', true);
+            const br = document.createElement('br');
             target.append(br);
-            target.append(`${txtresponse}`);
+            target.append(`${jsonresponse}`);
           });
       }
 
-      const formBtn = document.querySelector("#formBtn");
-      formBtn.addEventListener("click", sendForm);
+      function getData(e) {
+        e.preventDefault();
+
+        fetch('/api', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+        })
+          .then((data) => data.json()) 
+          .then((getdata) => {
+            console.log(getdata);
+
+            getdata.forEach((d) => {
+              console.log(d);
+              const x = document.querySelector('.users');
+              x.innerHTML += '<li>' + d.name + ' ' + d.zipcode + ' ' + d.interests + '</li>';
+            });
+          });
+      }
+
+      const formBtn = document.querySelector('#formBtn');
+      formBtn.addEventListener('click', sendForm);
+      const formBtnget = document.querySelector('#formBtnget');
+      formBtnget.addEventListener('click', getData);
     </script>
   </body>
 </html>

@@ -36,7 +36,7 @@ function processDataForFrontEnd(req, res) {
     })
     .catch((err) => {
       console.log(err);
-      res.redirect("/error");
+      res.redirect('/error');
     });
 }
 
@@ -44,16 +44,18 @@ function processDataForFrontEnd(req, res) {
 // or we'll end up with spelling errors in our endpoints.
 //
 app
-  .route("/api")
+  .route('/api')
   .get((req, res) => {
     // processDataForFrontEnd(req, res)
     (async () => {
       const db = await open(dbSettings);
-      const result = await db.all("SELECT * FROM user");
-      console.log("Expected result", result);
+      const result = await db.all('SELECT * FROM user');
+      console.log('Expected result', result);
       res.json(result);
     })();
   })
+
+  /*
   .post((req, res) => {
     console.log("/api post request", req.body);
     if (!req.body.name) {
@@ -64,6 +66,25 @@ app
       .then((result) => {
         console.log(result);
         res.send("your request was successful"); // simple mode
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }
+  })
+  */
+
+  .put((req, res) => {
+    console.log('/api put result', res);
+    if (!req.body.name || !req.body.zipcode) {
+      console.log(req.body);
+      res.status("418").json('Something went wrong; please enter your information.');
+    } else {
+      const username = [req.body.name, req.body.zipcode, req.body.interests]
+      writeUser(username, dbSettings)
+      .then((result) => {
+        console.log(result);
+        res.json('Success, it worked!'); // simple mode
       })
       .catch((err) => {
         console.log(err);
