@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Wagner Roofing Company</title>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Sans+Libre:400,700i&display=swap" rel="stylesheet">
+    <link href="style_two.css" type= "text/css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <!-- The contents of this lab are from the Mozilla Developer's Network -->
+      <header>
+        <h1>Wagner Roofing Company</h1>
+        <img src="wagner.png" alt="wagner roofing logo">
+        
+        <nav>
+          <ul>
+            <li><a href="scope of work.html">Scope of Work</a></li>
+            <li><a href="inventory.html">Inventory</a></li>
+            <li><a href="catalogs.html">Catalogs</a></li>
+            <li><a href="jobs.html">Upcoming Jobs</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section>
+          <h2>Scope of Work Sheet</h2>
+          <div>
+            <form>
+              <p>
+                <label for="job">Job Number:</label>
+                <input type="text" id="job" maxlength="200">
+              </p>
+              <p>
+                <label for="service">Servicemen:</label>
+                <input type="text" id="service" maxlength="200">
+              </p>
+              <p>
+                <label for="arrived">Time Arrived:</label>
+                <input type="text" id="arrived" maxlength="200">
+              </p>
+              <p>
+                <label for="textarea">Scope of Findings:</label>
+                <textarea id="textarea" type="text" rows="5" cols="33"></textarea>
+              </p>
+              <p>
+                <label for="manager">Manager Name:</label>
+                <input type="text" id="manager" maxlength="200">
+              </p>
+              <p>
+                <label for="departure">Departure Time:</label>
+                <input type="text" id="departure" maxlength="200">
+              </p>
+              <p>
+                <button class="button" onclick="check(this.form)" type="submit">Submit</button>
+              </p>
+              </form>

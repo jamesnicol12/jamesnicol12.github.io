@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Wagner Roofing Company</title>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Sans+Libre:400,700i&display=swap" rel="stylesheet">
+    <link href="style_two.css" type= "text/css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <!-- The contents of this lab are from the Mozilla Developer's Network -->
+      <header>
+        <h1>Wagner Roofing Company</h1>
+        <img src="wagner.png" alt="wagner roofing logo">
+        
+        <nav>
+          <ul>
+            <li><a href="scope of work.html">Scope of Work</a></li>
+            <li><a href="inventory.html">Inventory</a></li>
+            <li><a href="catalogs.html">Catalogs</a></li>
+            <li><a href="jobs.html">Upcoming Jobs</a></li>
+          </ul>
+        </nav>
+      </header>
+    
+
+      <main>
+        <section>
+          <h2>Inventory Update</h2>
+          <div>
+            <form>
+              <p>
+                <label for="date">Date:</label>
+                <input type="text" id="date" maxlength="200">
+              </p>
+              <p>
+                <label for="shipped">Brought In or Sent Out:</label>
+                <input type="text" id="shipped" maxlength="200">
+              </p>
+              <p>
+                <label for="textarea">Material:</label>
+                <textarea id="textarea" type="text" rows="5" cols="33"></textarea>
+              </p>
+              <p>
+                <button class="button" onclick="check(this.form)" type="submit">Submit</button>
+              </p>
+        </section>
+      </main>
+
+      <footer>
+        <p>This website has been written by..., 2020.</p>
+
+      </footer>
+  </body>
+</html>
