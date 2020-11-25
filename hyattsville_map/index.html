@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Maps Lab</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="header">Most Severe/Extreme Flooding Areas</div>
+        <div class="content">
+          <div id="mapid"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+        /* Your lab code can go here, or in an external file you include */
+        const mymap = L.map('mapid').setView([51.505, -0.09], 14);
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: 'pk.eyJ1Ijoiam5pY29sMTIiLCJhIjoiY2s4bm51ZmN4MHd6ZDNybDNtd2dzaXBmYyJ9.Sb3vIgqFA39fZIIREnRUYQ'
+}).addTo(mymap);
+        const mark1 = L.marker([38.964929, -76.965612]).addTo(mymap);
+
+        const mark2 = L.marker([38.963911, -76.968938]).addTo(mymap);
+
+        const mark3 = L.marker([38.956753, -76.971363]).addTo(mymap);
+
+        const mark4 = L.marker([38.954467, -76.966278]).addTo(mymap);
+
+        const mark5 = L.marker([38.952823, -76.965709]).addTo(mymap);
+
+        const mark6 = L.marker([38.951638, -76.960688]).addTo(mymap);
+
+        const mark7 = L.marker([38.949686, -76.956396]).addTo(mymap);
+
+        const mark8 = L.marker([38.950295, -76.955666]).addTo(mymap);
+        const str1 = "<b>Marked locations represent areas most susceptible to flooding</b>";
+        mark8.bindPopup(str1).openPopup();
+
+        const mark9 = L.marker([38.950678, -76.9554728]).addTo(mymap);
+
+        const mark10 = L.marker([38.952097, -76.953391]).addTo(mymap);
+
+        const mark11 = L.marker([38.951229, -76.948735]).addTo(mymap);
+
+        const mark12 = L.marker([38.944971, -76.942577]).addTo(mymap);
+
+        const mark13 = L.marker([38.945730, -76.940925]).addTo(mymap);
+
+        const mark14 = L.marker([38.947816, -76.937438]).addTo(mymap);
+
+        const mark15 = L.marker([38.948742, -76.936537]).addTo(mymap);
+
+        const mark16 = L.marker([38.955450, -76.950892]).addTo(mymap);
+
+        const mark17 = L.marker([38.956484, -76.950613]).addTo(mymap);
+
+        const mark18 = L.marker([38.957468, -76.950602]).addTo(mymap);
+
+        const mark19 = L.marker([38.956985, -76.950934]).addTo(mymap);
+
+        const mark20 = L.marker([38.957252, -76.949841]).addTo(mymap);
+
+        const mark21 = L.marker([38.957869, -76.949927]).addTo(mymap);
+
+        const mark22 = L.marker([38.958887, -76.949487]).addTo(mymap);
+
+        const mark23 = L.marker([38.960780, -76.949519]).addTo(mymap);
+
+        const mark24 = L.marker([38.960905, -76.948800]).addTo(mymap);
+
+        const mark25 = L.marker([38.961336, -76.949032]).addTo(mymap);
+
+        const mark26 = L.marker([38.955488, -76.969199]).addTo(mymap);
+
+        const mark27 = L.marker([38.955229, -76.972740]).addTo(mymap);
+
+        const mark28 = L.marker([38.953552, -76.969199]).addTo(mymap);
+
+        const mark29 = L.marker([38.954703, -76.962740]).addTo(mymap);
+
+        const mark30 = L.marker([38.963947, -76.969091]).addTo(mymap);
+
+        const mark31 = L.marker([38.965198, -76.967460]).addTo(mymap);
+
+        const mark32 = L.marker([38.954887, -76.951689]).addTo(mymap);
+
+        const mark33 = L.marker([38.954336, -76.952225]).addTo(mymap);
+
+        const mark34 = L.marker([38.953769, -76.953856]).addTo(mymap);
+    </script>
+  </body>
+</html>
